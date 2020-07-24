@@ -8,12 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var urlText: String = "https://www.apple.com"
+    
     var body: some View {
         VStack {
             Text("Link to the Web")
                 .padding()
             
-            Link("This is a link to the web", destination: URL(string: "https://www.apple.com")!)
+            Link("This is a link to the web", destination: URL(string: urlText)!)
+            
+            Spacer()
+            
+            TextField("Enter some address", text: $urlText)
+                .padding()
         }
     }
 }
